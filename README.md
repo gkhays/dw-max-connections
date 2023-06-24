@@ -71,6 +71,12 @@ QueuedThreadPool.java:1034
 Thread.java:748
 ```
 
+## Acknowledgements
+
+Request settings informed by [TimeLock issue #2181](https://github.com/palantir/atlasdb/issues/2181).
+
 ## Reference Links
 
+- [Optimizing Jetty | High Load](https://www.eclipse.org/jetty/documentation/jetty-9/index.html#high-load)
+- [TimeLock: Async all the things (Leadership checks)](https://github.com/palantir/atlasdb/issues/2181)
 - [Dropwizard Client](https://www.dropwizard.io/en/stable/manual/client.html)

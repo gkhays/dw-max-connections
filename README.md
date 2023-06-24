@@ -2,6 +2,27 @@
 
 By default, Dropwizard allows 1024 concurrent connections. I am troubleshooting a situation wherein an errant client exhausts all the connections.
 
+Target settings.
+
+```yml
+server:
+  idleThreadTimeout: 60s
+  maxQueuedRequests: 4096
+  maxThreads: 2048
+  minThreads: 1024
+
+  requestLog:
+    appenders:
+      - type: console
+      - type: file
+        archive: false
+        currentLogFilename: requests.log
+
+  applicationConnectors:
+    - type: http
+      idleTimeout: 60 seconds
+```
+
 ## Problem
 
 Trigger consumption of all available concurrent connections.

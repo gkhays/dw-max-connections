@@ -1,0 +1,16 @@
+server:
+  idleThreadTimeout: 60s
+  maxQueuedRequests: 8
+  maxThreads: 4
+  minThreads: 4
+  
+  requestLog:
+    appenders:
+      - type: console
+      - type: file
+        archive: false
+        currentLogFilename: requests.log
+  
+  applicationConnectors:
+    - type: http
+      idleTimeout: 60 seconds

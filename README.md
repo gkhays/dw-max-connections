@@ -1,5 +1,34 @@
 # Dropwizard Max Connections
 
+By default, Dropwizard allows 1024 concurrent connections. I am troubleshooting a situation wherein an errant client exhausts all the connections.
+
+## Problem
+
+Trigger consumption of all available concurrent connections.
+
+```java
+WARN  [2023-06-16 16:09:11.836] [org.eclipse.jetty.util.thread.QueuedThreadPool] InstrumentedQueuedThreadPool[dw]@67a3dd86{STARTED,8<=1024<=1024,i=0,r=-1,q=1024}[ReservedThreadExecutor@38ff5515{reserved=0/1,pending=1}] rejected Accept@727af385[java.nio.channels.SocketChannel[connected local=/10.x.x.x:8080 remote=/10.x.x.x:52428]]
+```
+
+## Quick Start
+
+This project requires Java, Maven, Dropwizard, and optionally, Docker.
+
+### Installing
+
+Clone this repository.
+
+```console
+git clone https://github.com/gkhays/dw-max-connections.git
+cd dw-max-connections
+```
+
+Build the Java library (JAR).
+
+```console
+mvn package
+```
+
 ## How to start the ConnectionTest application
 
 1. Run `mvn clean install` to build your application
